@@ -1,10 +1,9 @@
-package main;
+public class FindTheMinimum {
 
-public class findTheMinimum {
     public static void main(String[] args) {
-        int minOfTwo = getTwoMinimum(100, 111);
+        int minOfTwo = getTwoMinimum(5, 5);
         int minOfThree = getThreeMinimum(5, 11, 1);
-        int minOfFour = getFourMinimum(1111, 1, 0, 2);
+        int minOfFour = getFourMinimum(1, 1, 1, 1);
         System.out.println("Minimum of two = " + minOfTwo);
         System.out.println("Minimum of three = " + minOfThree);
         System.out.println("Minimum of four = " + minOfFour);
