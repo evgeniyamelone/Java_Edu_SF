@@ -29,8 +29,8 @@ public class SearchElementInArray {
         long endLinear = System.nanoTime();
         long linearTimeExecution = endLinear - startLinear;
 
-        Arrays.sort(arr);
         long startBinary = System.nanoTime();
+        Arrays.sort(arr);
         System.out.println("Binary search number is present in array: " + binarySearch(arr, elementToSearch));
         long endBinary = System.nanoTime();
         long binaryTimeExecution = endBinary - startBinary;
