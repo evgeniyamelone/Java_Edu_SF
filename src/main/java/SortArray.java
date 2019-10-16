@@ -17,6 +17,7 @@ public class SortArray {
         }
 
         System.out.println(Arrays.toString(bubble(arr)));
+        System.out.println(Arrays.toString(selection(arr)));
     }
 
     public static int[] bubble(int[] arrToSort) {
@@ -34,5 +35,19 @@ public class SortArray {
         return arrToSort;
     }
 
-    public static int[] bubble(int[] arrToSort)
+    public static int[] selection(int[] arrToSort) {
+        int minIndex;
+        for (int i = 0; i < arrToSort.length; i++) {
+            minIndex = i;
+            for (int j = i + 1; j < arrToSort.length; j++) {
+                if (arrToSort[j] < arrToSort[minIndex]) {
+                    j = minIndex;
+                }
+                int temp = arrToSort[minIndex];
+                arrToSort[minIndex] = arrToSort[i];
+                arrToSort[i] = temp;
+            }
+        }
+        return arrToSort;
+    }
 }
