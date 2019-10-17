@@ -36,9 +36,8 @@ public class SortArray {
     }
 
     public static int[] selection(int[] arrToSort) {
-        int minIndex;
         for (int i = 0; i < arrToSort.length; i++) {
-            minIndex = i;
+            int minIndex = i;
             for (int j = i + 1; j < arrToSort.length; j++) {
                 if (arrToSort[j] < arrToSort[minIndex]) {
                     j = minIndex;

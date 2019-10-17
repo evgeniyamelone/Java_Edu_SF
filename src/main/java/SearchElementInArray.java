@@ -39,9 +39,9 @@ public class SearchElementInArray {
         System.out.println("Binary Search takes " + binaryTimeExecution + "ms");
     }
 
-    public static boolean linearSearch(int[] arr, int i) {
-        for (int index = 0; index < arr.length; index++) {
-            if (arr[index] == i)
+    public static boolean linearSearch(int[] arr, int searchValue) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == i)
                 return true;
         }
         return false;
