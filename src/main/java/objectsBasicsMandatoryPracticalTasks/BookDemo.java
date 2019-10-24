@@ -1,8 +1,12 @@
 package objectsBasicsMandatoryPracticalTasks;
 
-public class BookDemo {
+class BookDemo {
     public static void main(String[] args) {
-        Book author = new Author("Stephen", "King");
-        author.getAuthor()
+        Author author = new Author("Russel ", "Winderand");
+        Book book;
+        book = new Book("Developing Java Software", author, 79.75);
+        book.printBook(book);
+        author.printAuthor(author);
     }
 }
+
