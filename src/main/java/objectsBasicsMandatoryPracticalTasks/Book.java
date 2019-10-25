@@ -12,6 +12,6 @@ class Book {
     }
 
     void printBook(Book book) {
-        System.out.println("\nTitle: " + title + "\nPrice " + price);
+        System.out.println("Title: \n" +  " " + title + "\nPrice: \n" + " " + price);
     }
 }

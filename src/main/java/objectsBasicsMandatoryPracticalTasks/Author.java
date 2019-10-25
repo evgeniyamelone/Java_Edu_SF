@@ -9,7 +9,7 @@ class Author {
     }
 
     void printAuthor(Author author) {
-        System.out.println("Author: \nFirst name: " + firstName + "\nLast name: " + lastName);
+        System.out.println("Author: \n First name: " + firstName + "\n" + " Last name: " + lastName);
     }
 }
 
