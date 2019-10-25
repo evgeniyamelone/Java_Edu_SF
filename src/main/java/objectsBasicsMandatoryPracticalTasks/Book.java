@@ -1,17 +1,17 @@
 package objectsBasicsMandatoryPracticalTasks;
 
 class Book {
-    String title;
+    private String title;
+    private double price;
     Author author;
-    double price;
 
-    public Book(String title, Author author, double price) {
+    Book(String title, Author author, double price) {
         this.title = title;
-        this.author = author;
         this.price = price;
+        author.printAuthor(author);
     }
 
-    public void printBook(Book book) {
-        System.out.println("\nTitle: " + title + "\nAuthor " + author + "\nPrice " + price);
+    void printBook(Book book) {
+        System.out.println("\nTitle: " + title + "\nPrice " + price);
     }
 }
