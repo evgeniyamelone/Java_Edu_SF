@@ -1,21 +1,20 @@
 package Dogs;
 
-public class Age {
-    int[] age;
+import java.util.Scanner;
 
-    void createDogsAge() {
-        int[] arrAge = new int[20];
-        for (int i = 0; i < 20; i++) {
-            arrAge[i] = i + 1;
-        }
-        this.age = arrAge;
+public class Age {
+    private String[] arrAge;
+
+    Age() {
     }
 
-    public int getDogsAge() {
-        this.createDogsAge();
-        int x = this.age.length;
+    String getRandomDogAge() {
+        Scanner s1 = new Scanner(System.in);
+        System.out.print("Specify age of dogs from 1 to 21 (use space for separation): ");
+        String str = s1.nextLine();
+        String[] arrAge = str.split(" ");
+        int x = arrAge.length;
         int rand = (int) (Math.random() * x);
-        int s = this.age[rand];
-        return s;
+        return arrAge[rand];
     }
 }
