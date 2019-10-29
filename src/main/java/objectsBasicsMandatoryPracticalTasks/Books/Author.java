@@ -1,4 +1,4 @@
-package objectsBasicsMandatoryPracticalTasks;
+package objectsBasicsMandatoryPracticalTasks.Books;
 
 class Author {
     private String firstName, lastName;

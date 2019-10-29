@@ -1,4 +1,4 @@
-package objectsBasicsMandatoryPracticalTasks;
+package objectsBasicsMandatoryPracticalTasks.Books;
 
 class Book {
     private String title;

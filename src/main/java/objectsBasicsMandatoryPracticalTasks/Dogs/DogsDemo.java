@@ -1,6 +1,5 @@
-package Dogs;
+package objectsBasicsMandatoryPracticalTasks.Dogs;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class DogsDemo {
@@ -8,23 +7,47 @@ public class DogsDemo {
         Scanner s1 = new Scanner(System.in);
         System.out.print("Specify the number of dogs: ");
         String str = s1.nextLine();
-//        String delimeter = " ";
-//        String[] splitedStr = str.split(delimeter);
+        String delimeter = " ";
+        String[] splitedStr = str.split(delimeter);
 
-        Name dogName = new Name();
-        String name = dogName.getRandomDogName();
+        //dogs quantity
+        int dogsQuantity = Integer.parseInt(splitedStr[0]);
+        System.out.println(dogsQuantity);
 
-        Age dogAge = new Age();
-        String age = dogAge.getRandomDogAge();
+        Name inputName = new Name();
+        String[] arrNames = inputName.inputName();
 
-        Dog[] dogAny = new Dog[];
-        System.out.println(Arrays.toString(dogAny.getDog(name, age)));
+        Age inputAge = new Age();
+        String[] arrAges = inputAge.inputAge();
 
-        //        System.out.println(name);
+        Size inputSize = new Size();
+        String[] arrSizes = inputSize.inputSize();
+
+        Dog[] dog = new Dog[dogsQuantity];
+
+        for (int i = 0; i < dogsQuantity + 1; i++) {
+            Name dogName = new Name();
+            String name = dogName.getRandomDogName(arrNames);
+            System.out.println(name);
+
+            Age dogAge = new Age();
+            String age = dogAge.getRandomDogAge(arrAges);
+            System.out.println(age);
+
+            Size dogSize = new Size();
+            String size = dogSize.getSize(arrSizes);
+            System.out.println(size);
+
+            dog[i] = new Dog(name, age, size);
+        }
+
+    }
+
+    //        System.out.println(name);
 //        System.out.println(age);
 
 
-        //  String str = "10 Harry 15 big";
+    //  String str = "10 Harry 15 big";
 
 //        // split to array
 //        String delimeter = " ";
@@ -39,7 +62,7 @@ public class DogsDemo {
 //        System.out.print(Arrays.toString(dogs));
 
 
-        // print out dogs l
+    // print out dogs l
 
 
 //        int i = 0;
@@ -69,8 +92,8 @@ public class DogsDemo {
 //        System.out.print(" " + arrDogs[2]);
 //        //    i++;
 //    }
-    }
 }
+
 //}
 //        Name dogName = new Name();
 //        dogName.getDogName();
