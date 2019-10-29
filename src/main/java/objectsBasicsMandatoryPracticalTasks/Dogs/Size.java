@@ -5,7 +5,11 @@ import java.util.Scanner;
 class Size {
     private String[] arrSize;
 
-    String[] inputSize() {
+    String[] inputSize(boolean dummy) {
+        if (dummy) {
+            String[] dummySizes= {"small", "medium", "big"};
+            return dummySizes;
+        }
         Scanner s1 = new Scanner(System.in);
         System.out.print("Specify sizes of dogs: small/medium/big (use space for separation): ");
         String str = s1.nextLine();

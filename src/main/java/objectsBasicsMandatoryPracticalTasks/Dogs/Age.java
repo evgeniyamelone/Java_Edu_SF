@@ -5,7 +5,11 @@ import java.util.Scanner;
 class Age {
     private String[] arrAge;
 
-    String[] inputAge() {
+    String[] inputAge(boolean dummy) {
+        if (dummy) {
+            String[] dummyAges= {"10", "15", "20", "25"};
+            return dummyAges;
+        }
         Scanner s1 = new Scanner(System.in);
         System.out.print("Specify age of dogs from 1 to 21 (use space for separation): ");
         String str = s1.nextLine();

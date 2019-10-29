@@ -1,101 +1,96 @@
 package objectsBasicsMandatoryPracticalTasks.Dogs;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DogsDemo {
     public static void main(String[] args) {
         Scanner s1 = new Scanner(System.in);
         System.out.print("Specify the number of dogs: ");
-        String str = s1.nextLine();
-        String delimeter = " ";
-        String[] splitedStr = str.split(delimeter);
+//        String str = s1.nextLine();
+//        String delimeter = " ";
+//        String[] splitedStr = str.split(delimeter);
 
         //dogs quantity
-        int dogsQuantity = Integer.parseInt(splitedStr[0]);
+//        int dogsQuantity = Integer.parseInt(splitedStr[0]);
+        int dogsQuantity = 10;
         System.out.println(dogsQuantity);
 
         Name inputName = new Name();
-        String[] arrNames = inputName.inputName();
+        String[] arrNames = inputName.inputName(true);
 
         Age inputAge = new Age();
-        String[] arrAges = inputAge.inputAge();
+        String[] arrAges = inputAge.inputAge(true);
 
         Size inputSize = new Size();
-        String[] arrSizes = inputSize.inputSize();
+        String[] arrSizes = inputSize.inputSize(true);
 
         Dog[] dog = new Dog[dogsQuantity];
 
-        for (int i = 0; i < dogsQuantity + 1; i++) {
-            Name dogName = new Name();
-            String name = dogName.getRandomDogName(arrNames);
-            System.out.println(name);
-
-            Age dogAge = new Age();
-            String age = dogAge.getRandomDogAge(arrAges);
-            System.out.println(age);
-
-            Size dogSize = new Size();
-            String size = dogSize.getSize(arrSizes);
-            System.out.println(size);
-
+        for (int i = 0; i < dogsQuantity; i++) {
+            String name = Dog.getRandomElement(arrNames);
+            String age = Dog.getRandomElement(arrAges);
+            String size = Dog.getRandomElement(arrSizes);
             dog[i] = new Dog(name, age, size);
+        }
+
+        for (int i = 0; i < dog.length - 1; i++) {
+            for (int j = i+1; j < dog.length; j++) {
+                Dog current = dog[i];
+                Dog next = dog[j];
+                if (current.getName().compareTo(next.getName()) > 0) {
+                    Dog temp = dog[i];
+                    dog[i] = dog[j];
+                    dog[j] = temp;
+                }
+            }
+        }
+
+//        String[] myArray = {"two", "one", "three"};
+//        DogSort dogSort = new DogSort();
+//        String[] result = dogSort.dogSort(myArray);
+
+        for (int i = 0; i < dog.length - 1; i++) {
+            for (int j = i+1; j < dog.length; j++) {
+                Dog current = dog[i];
+                Dog next = dog[j];
+                if (current.getAge() >= next.getAge()) {
+                    Dog temp = dog[i];
+                    dog[i] = dog[j];
+                    dog[j] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < dog.length - 1; i++) {
+            for (int j = i+1; j < dog.length; j++) {
+                Dog current = dog[i];
+                Dog next = dog[j];
+                if (current.getSize().compareTo(next.getSize()) > 0) {
+                    Dog temp = dog[i];
+                    dog[i] = dog[j];
+                    dog[j] = temp;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+        System.out.print("\n\n\t\t---- SORTED ARRAY ----\n\n");
+
+        for (int i = 0; i < dogsQuantity; i++) {
+            dog[i].printDog();
         }
 
     }
 
-    //        System.out.println(name);
-//        System.out.println(age);
 
-
-    //  String str = "10 Harry 15 big";
-
-//        // split to array
-//        String delimeter = " ";
-//        String[] splitedStr = str.split(delimeter);
-//
-//        //dogs quantity
-//        int dogsQuantity = Integer.parseInt(splitedStr[0]);
-//        System.out.println("\n" + dogsQuantity);
-//
-//        String[] dogs = new String[dogsQuantity];
-//        dogs = splitedStr;
-//        System.out.print(Arrays.toString(dogs));
-
-
-    // print out dogs l
-
-
-//        int i = 0;
-//        while (i < dogsQuantity) {
-//            for (int k = 1; k < splitedStr.length; k++) {
-//                System.out.print(splitedStr[k] + " ");
-//            }
-//            i++;
-//        }
-//        String[] arrDogs = new String[3];
-//        // for (int i = 1; i <= numberOfDogs; i++) {
-//        Name tempName = new Name();
-//        String dogName = tempName.getDogName();
-//        arrDogs[0] = dogName;
-//
-//        Age tempAge = new Age();
-//        int intDogAge = tempAge.getDogsAge();
-//        String dogAge = Integer.toString(intDogAge);
-//        arrDogs[1] = dogAge;
-//
-//        Size dogTempSize = new Size();
-//        String dogSize = dogTempSize.getSize();
-//        arrDogs[2] = dogSize;
-//
-//        System.out.print(arrDogs[0]);
-//        System.out.print(" " + arrDogs[1]);
-//        System.out.print(" " + arrDogs[2]);
-//        //    i++;
-//    }
 }
 
-//}
-//        Name dogName = new Name();
-//        dogName.getDogName();
-//        Age dogAge = new Age();
-//        dogAge.getDogsAge();
+
+
