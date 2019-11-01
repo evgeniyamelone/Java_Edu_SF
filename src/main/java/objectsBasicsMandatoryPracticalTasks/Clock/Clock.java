@@ -1,5 +1,6 @@
 package objectsBasicsMandatoryPracticalTasks.Clock;
 
+
 class Clock {
     private long hours;
     private long minutes;
