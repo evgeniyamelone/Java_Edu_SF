@@ -1,7 +1,7 @@
 package objectsBasicsMandatoryPracticalTasks.Dogs;
 
-public class DogSort {
-    public  String[] dogSort(String[] myArray) {
+class DogSort {
+    String[] dogSort(String[] myArray) {
         int size = myArray.length;
         for (int i = 0; i < size - 1; i++) {
             for (int j = i + 1; j < myArray.length; j++) {

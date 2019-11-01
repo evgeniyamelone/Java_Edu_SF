@@ -7,23 +7,22 @@ public class DogsDemo {
     public static void main(String[] args) {
         Scanner s1 = new Scanner(System.in);
         System.out.print("Specify the number of dogs: ");
-//        String str = s1.nextLine();
-//        String delimeter = " ";
-//        String[] splitedStr = str.split(delimeter);
+        String str = s1.nextLine();
+        String delimeter = " ";
+        String[] splitedStr = str.split(delimeter);
 
         //dogs quantity
-//        int dogsQuantity = Integer.parseInt(splitedStr[0]);
-        int dogsQuantity = 10;
+        int dogsQuantity = Integer.parseInt(splitedStr[0]);
         System.out.println(dogsQuantity);
 
         Name inputName = new Name();
-        String[] arrNames = inputName.inputName(true);
+        String[] arrNames = inputName.inputName(false);
 
         Age inputAge = new Age();
-        String[] arrAges = inputAge.inputAge(true);
+        String[] arrAges = inputAge.inputAge(false);
 
         Size inputSize = new Size();
-        String[] arrSizes = inputSize.inputSize(true);
+        String[] arrSizes = inputSize.inputSize(false);
 
         Dog[] dog = new Dog[dogsQuantity];
 
@@ -35,7 +34,7 @@ public class DogsDemo {
         }
 
         for (int i = 0; i < dog.length - 1; i++) {
-            for (int j = i+1; j < dog.length; j++) {
+            for (int j = i + 1; j < dog.length; j++) {
                 Dog current = dog[i];
                 Dog next = dog[j];
                 if (current.getName().compareTo(next.getName()) > 0) {
@@ -46,12 +45,18 @@ public class DogsDemo {
             }
         }
 
-//        String[] myArray = {"two", "one", "three"};
-//        DogSort dogSort = new DogSort();
-//        String[] result = dogSort.dogSort(myArray);
+        System.out.print("\n\n\t\t---- SORTED ARRAY BY NAME ----\n\n");
+
+        for (int i = 0; i < dogsQuantity; i++) {
+            dog[i].printDog();
+        }
+
+        String[] myArray = {"two", "one", "three"};
+        DogSort dogSort = new DogSort();
+        String[] result = dogSort.dogSort(myArray);
 
         for (int i = 0; i < dog.length - 1; i++) {
-            for (int j = i+1; j < dog.length; j++) {
+            for (int j = i + 1; j < dog.length; j++) {
                 Dog current = dog[i];
                 Dog next = dog[j];
                 if (current.getAge() >= next.getAge()) {
@@ -62,8 +67,14 @@ public class DogsDemo {
             }
         }
 
+        System.out.print("\n\n\t\t---- SORTED ARRAY BY AGE ----\n\n");
+
+        for (int i = 0; i < dogsQuantity; i++) {
+            dog[i].printDog();
+        }
+
         for (int i = 0; i < dog.length - 1; i++) {
-            for (int j = i+1; j < dog.length; j++) {
+            for (int j = i + 1; j < dog.length; j++) {
                 Dog current = dog[i];
                 Dog next = dog[j];
                 if (current.getSize().compareTo(next.getSize()) > 0) {
@@ -74,14 +85,7 @@ public class DogsDemo {
             }
         }
 
-
-
-
-
-
-
-
-        System.out.print("\n\n\t\t---- SORTED ARRAY ----\n\n");
+        System.out.print("\n\n\t\t---- SORTED ARRAY BY SIZE ----\n\n");
 
         for (int i = 0; i < dogsQuantity; i++) {
             dog[i].printDog();
