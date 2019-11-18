@@ -40,12 +40,12 @@ public class Rectangle extends Shape {
     }
 
     //perimeter of rectangle
-    public double getPerimeter() {
-        return 2 * getLength() * getWidth();
+    double getPerimeter() {
+        return 2 * (getLength() + getWidth());
     }
 
     @Override
     public String toString() {
-        return "A Rectangle with width= " + getWidth() + " and length= " + getLength() + ", which is a subclass of " + super.toString();
+        return "A Rectangle with width = " + getWidth() + " and length = " + getLength() + ", which is a subclass of " + super.toString();
     }
 }

@@ -15,7 +15,6 @@ public class Shape {
         this.filled = filled;
     }
 
-    //getters
     String getColour() {
         return colour;
     }
@@ -24,12 +23,11 @@ public class Shape {
         return filled;
     }
 
-    //setters
-    public void setColour(String colour) {
+    void setColour(String colour) {
         this.colour = colour;
     }
 
-    public void setFilled(boolean filled) {
+    void setFilled(boolean filled) {
         this.filled = filled;
     }
 

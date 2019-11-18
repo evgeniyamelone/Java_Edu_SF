@@ -1,10 +1,10 @@
 package shapes;
 
 public class Square extends Rectangle {
-    public Square() {
+    Square() {
     }
 
-    public Square(double side) {
+    Square(double side) {
         super(side, side);
     }
 
@@ -26,7 +26,7 @@ public class Square extends Rectangle {
 
     @Override
     public String toString() {
-        return "A Square with side= " + getWidth() + ", which is a subclass of " + super.toString();
+        return "A Square with side = " + getWidth() + ", which is a subclass of " + super.toString();
     }
 }
 
