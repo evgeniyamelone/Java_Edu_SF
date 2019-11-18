@@ -3,7 +3,6 @@ package circle;
 public class Circle {
     private double radius;
     private String colour;
-    final double PI = 3.14;
 
     Circle() {
 
@@ -36,7 +35,7 @@ public class Circle {
 
     public double getArea() {
         double radius = getRadius();
-        return PI * radius * radius;
+        return Math.PI * radius * radius;
     }
 
     public String toString() {
