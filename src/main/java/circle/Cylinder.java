@@ -45,6 +45,6 @@ public class Cylinder extends Circle {
 
     @Override
     public String toString() {
-        return "Cylinder parameters: \n\tradius: " + super.getRadius() + "\n\tcolour: " + super.getColour() + "\n\theight: " + getHeight() + "\n\tarea: " + getArea() + "\n\tvolume: " + getVolume();
+        return "Cylinder parameters: [radius: " + super.getRadius() + "; colour: " + super.getColour() + "; height: " + getHeight() + "; area: " + getArea() + "; volume: " + getVolume()+"]";
     }
 }

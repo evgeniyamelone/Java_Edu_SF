@@ -44,6 +44,6 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "Circle parameters: \n\tradius: " + getRadius() + "\n\tcolour: " + getColour() + "\n\tarea: " + getArea();
+        return "Circle parameters [radius: " + getRadius() + "; colour: " + getColour() + "; area: " + getArea() + "]";
     }
 }
