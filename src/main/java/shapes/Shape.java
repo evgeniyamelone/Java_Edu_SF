@@ -34,10 +34,7 @@ public class Shape {
 
     @Override
     public String toString() {
-        String isNot = "filled";
-        if (!isFilled()) {
-            isNot = "Not filled";
-        }
-        return "A Shape with the colour of " + getColour() +" "+ isNot;
+        String filledText = isFilled() ? "filled" : "not filled";
+        return "A Shape with the colour of " + getColour() +" "+ filledText;
     }
 }

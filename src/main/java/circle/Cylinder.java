@@ -2,7 +2,6 @@ package circle;
 
 public class Cylinder extends Circle {
     private double height;
-    final double PI = 3.14;
 
     //constructors
     public Cylinder() {
@@ -36,12 +35,12 @@ public class Cylinder extends Circle {
     // should return the surface area
     @Override
     public double getArea() {
-        return 2 * PI * super.getRadius() * (super.getRadius() + this.height);
+        return 2 * Math.PI * super.getRadius() * (super.getRadius() + this.height);
     }
 
     // should return the cylinder volume
     double getVolume() {
-        return PI * getArea() * this.height;
+        return Math.PI * getArea() * this.height;
     }
 
     @Override

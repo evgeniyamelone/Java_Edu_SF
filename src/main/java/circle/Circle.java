@@ -3,7 +3,6 @@ package circle;
 public class Circle {
     private double radius;
     private String colour;
-    final double PI = 3.14;
 
     //constructors
     Circle() {
@@ -33,16 +32,17 @@ public class Circle {
         this.radius = radius;
     }
 
-    public void setRadius(String colour) {
+    public void setColour(String colour) {
         this.colour = colour;
     }
 
     //area of​a circle
     public double getArea() {
         double radius = getRadius();
-        return PI * radius * radius;
+        return Math.PI * radius * radius;
     }
 
+    @Override
     public String toString() {
         return "Circle parameters: \n\tradius: " + getRadius() + "\n\tcolour: " + getColour() + "\n\tarea: " + getArea();
     }
