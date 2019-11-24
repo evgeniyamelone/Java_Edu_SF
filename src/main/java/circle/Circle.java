@@ -4,7 +4,6 @@ public class Circle {
     private double radius;
     private String colour;
 
-    //constructors
     Circle() {
 
     }
@@ -18,7 +17,6 @@ public class Circle {
         this.colour = colour;
     }
 
-    //getters
     double getRadius() {
         return radius;
     }
@@ -27,7 +25,6 @@ public class Circle {
         return colour;
     }
 
-    //setters
     public void setRadius(double radius) {
         this.radius = radius;
     }
@@ -36,7 +33,6 @@ public class Circle {
         this.colour = colour;
     }
 
-    //area of​a circle
     public double getArea() {
         double radius = getRadius();
         return Math.PI * radius * radius;
