@@ -24,9 +24,23 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
+    @Override
     double getArea() {
         double radius = getRadius();
         return Math.PI * radius * radius;
+    }
+
+    @Override
+    double getPerimeter() {
+        return 0;
+    }
+
+    @Override
+    boolean isInside(double x, double y) {
+        if (Math.abs(x)<radius && Math.abs(y)<radius) {
+            return true;
+        }
+        else return false;
     }
 
     @Override
