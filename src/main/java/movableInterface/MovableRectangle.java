@@ -2,8 +2,46 @@ package movableInterface;
 
 public class MovableRectangle implements Movable {
 
-    private MovablePoint topLeft = new MovablePoint(5, 6, 4, 1);
-    private MovablePoint bottomRight = new MovablePoint(7, 3, 1, 0);
+    private MovablePoint topLeft;
+    private MovablePoint bottomRight;
+
+    MovableRectangle(MovablePoint topLeft, MovablePoint bottomRight) {
+        this.topLeft = topLeft;
+        this.bottomRight = bottomRight;
+    }
+
+    @Override
+    public void moveUp() {
+        this.topLeft.moveUp();
+        this.bottomRight.moveUp();
+    }
+
+    @Override
+    public void moveDown() {
+        this.topLeft.moveDown();
+        this.bottomRight.moveDown();
+    }
+
+    @Override
+    public void moveLeft() {
+        this.topLeft.moveLeft();
+        this.bottomRight.moveLeft();
+    }
+
+    @Override
+    public void moveRight() {
+        this.topLeft.moveRight();
+        this.bottomRight.moveRight();
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle info: [topLeft " + this.getTopLeft() + ", bottomRight " + this.getBottomRight() + ", xSpeed: " + this.topLeft.getxSpeed() + ", ySpeed: " + this.bottomRight.getySpeed() + "]";
+    }
+
+    void print() {
+        System.out.println(this.toString());
+    }
 
     public void setBottomRight(MovablePoint bottomRight) {
         this.bottomRight = bottomRight;
@@ -13,34 +51,18 @@ public class MovableRectangle implements Movable {
         this.topLeft = topLeft;
     }
 
-    public MovablePoint getBottomRight() {
-        return bottomRight;
+    MovablePoint getBottomRight() {
+        return this.bottomRight;
     }
 
-    public MovablePoint getTopLeft() {
-        return topLeft;
+    MovablePoint getTopLeft() {
+        return this.topLeft;
     }
 
-    @Override
-    public void moveUp() {
-    }
-
-    @Override
-    public void moveDown() {
-        topLeft.moveDown();
-     }
-
-    @Override
-    public void moveLeft() {
-    }
-
-    @Override
-    public int moveRight() {
-        return 0;
-    }
-
-    @Override
-    public String toString() {
-        return "Coordinates: [topLeft:" + topLeft + ", bottomRight:" + bottomRight + "]";
+    void setSpeed(int xSpeed, int ySpeed) {
+        this.topLeft.setxSpeed(xSpeed);
+        this.topLeft.setySpeed(ySpeed);
+        this.bottomRight.setxSpeed(xSpeed);
+        this.bottomRight.setySpeed(ySpeed);
     }
 }
