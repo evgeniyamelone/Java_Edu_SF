@@ -2,7 +2,7 @@ package MathUtil;
 
 class MathUtil {
     int max(int[] array) {
-        int max = 0;
+        int max = min(array);
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
@@ -12,7 +12,7 @@ class MathUtil {
     }
 
     double max(double[] array) {
-        double max = 0;
+        double max = min(array);
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
@@ -75,10 +75,10 @@ class MathUtil {
         }
     }
 
-    int pow(int[] array, int power) {
-        int result = array[0];
-        int i = 1;
-        while (i < power) {
+    long pow(int[] array, int power) {
+        long result = array[0];
+        int i = 2;
+        while (i <= power) {
             result = result * array[0];
             i++;
         }
@@ -87,8 +87,8 @@ class MathUtil {
 
     double pow(double[] array, int power) {
         double result = array[0];
-        int i = 1;
-        while (i < power) {
+        int i = 2;
+        while (i <= power) {
             result = result * array[0];
             i++;
         }
