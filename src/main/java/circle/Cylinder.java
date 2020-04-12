@@ -1,6 +1,6 @@
 package circle;
 
-public class Cylinder extends Circle {
+public class Cylinder extends Ring {
     private double height;
 
     Cylinder() {
@@ -16,7 +16,7 @@ public class Cylinder extends Circle {
         this.height = height;
     }
 
-    Cylinder(double radius, double height, String colour) {
+    public Cylinder(double radius, double height, String colour) {
         super(radius, colour);
         this.height = height;
     }

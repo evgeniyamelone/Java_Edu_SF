@@ -3,9 +3,7 @@ package shapes;
 public class Circle extends Shape {
     private double radius;
 
-    Circle() {
-        this.radius = 1;
-    }
+
 
     Circle(double radius) {
         this.radius = radius;
