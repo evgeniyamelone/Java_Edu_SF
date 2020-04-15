@@ -23,4 +23,7 @@ public class Pair<T, U> {
         this.second = second;
     }
 
+    public String toString(){
+        return first+",\n"+second;
+    }
 }

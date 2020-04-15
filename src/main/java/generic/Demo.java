@@ -10,10 +10,7 @@ import java.util.Arrays;
 public class Demo {
     public static void main(String[] args) {
         Pair<String, Shape> objectsPair = new Pair<>("Simple Shape", new Shape("red", true));
-        String name = objectsPair.getFirst();
-        Shape shape = objectsPair.getSecond();
-        System.out.println(name);
-        System.out.println(shape);
+        System.out.println(objectsPair);
 
         Ring ringRed = new Ring(7, "red");
         Ring ringBlue = new Ring(6, "blue");
