@@ -18,11 +18,17 @@ public class Demo {
 
         Cylinder cylinderRed = new Cylinder(6, 1, "red");
         Cylinder cylinderBlue = new Cylinder(6, 1, "blue");
-        System.out.println("Cylinders are equal: " + compareObjects(cylinderRed, cylinderBlue));
+        Cylinder bigger = getMax(cylinderRed, cylinderBlue);
+        System.out.println("This one is bigger: " + bigger);
     }
 
     public static <T extends Comparable<T>> boolean compareObjects(T object1, T object2) {
         int result = object1.compareTo(object2);
         return result == 0;
+    }
+
+    public static <T extends Comparable<? super T>> T getMax(T object1, T object2) {
+        boolean compareResult = true;
+        return compareResult ? object1 : object2;
     }
 }
