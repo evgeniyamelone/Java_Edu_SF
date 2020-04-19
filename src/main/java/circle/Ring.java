@@ -1,18 +1,18 @@
 package circle;
 
-public class Circle {
+public class Ring implements Comparable<Ring> {
     private double radius;
     private String colour;
 
-    Circle() {
+    Ring() {
 
     }
 
-    Circle(double radius) {
+    Ring(double radius) {
         this.radius = radius;
     }
 
-    Circle(double radius, String colour) {
+    public Ring(double radius, String colour) {
         this.radius = radius;
         this.colour = colour;
     }
@@ -41,5 +41,10 @@ public class Circle {
     @Override
     public String toString() {
         return "Circle parameters [radius: " + getRadius() + "; colour: " + getColour() + "; area: " + getArea() + "]";
+    }
+
+    @Override
+    public int compareTo(Ring ring) {
+        return Double.compare(getArea(), ring.getArea());
     }
 }

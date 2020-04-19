@@ -10,7 +10,7 @@ public class Shape {
         this.filled = true;
     }
 
-    Shape(String colour, boolean filled) {
+    public Shape(String colour, boolean filled) {
         this.colour = colour;
         this.filled = filled;
     }
