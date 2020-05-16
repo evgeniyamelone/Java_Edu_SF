@@ -36,6 +36,13 @@ public class Movie {
     }
 
 
+//    public void printMoviesList() {
+//        Iterator<String> iter = moviesList.iterator();
+//        while (iter.hasNext()) {
+//
+//            System.out.println(iter.next());
+//        }
+
 //    public void addToMovie(MovieHashSet movie) {
 //        moviesList.add(movie);
 //    }
