@@ -5,18 +5,12 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class MoviesArrayList {
+public class MovieArrayList {
     private List<String> moviesList = new ArrayList<>();
 
     public void addToMoviesList(String movie) {
         moviesList.add(movie);
     }
-
-//    public void printMoviesList() {
-//        for (String s : moviesList) {
-//            System.out.println(s);
-//        }
-//    }
 
     public void changeMovie(int index, String movie) {
         moviesList.set(index, movie);
@@ -44,16 +38,3 @@ public class MoviesArrayList {
 }
 
 
-//    Implement a separate demo program for each of the following collections:
-//        * ArrayList
-//        * HashSet
-//        * HashMap
-//        * Queue
-//        For each collection test following actions (if applicable to the collection type):
-//        * add element
-//        * edit some element
-//        * remove some element
-//        * sort elements
-//        * iterate through the collection printing each element
-//         
-//        Also, you may test other collection types or\and other methods provided by the collection itself or by the Collections class.
