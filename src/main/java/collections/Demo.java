@@ -48,7 +48,16 @@ public class Demo {
         System.out.println("\nUpdated HashMap of Movies:");
         moviesList3.printMoviesList();
 
-
+        MovieQueue moviesList4 = new MovieQueue();
+        moviesList4.addToMoviesList("Top Gun: Maverick");
+        moviesList4.addToMoviesList("Top Gun");
+        moviesList4.addToMoviesList("Voltron");
+        moviesList4.addToMoviesList("Robotech");
+        System.out.println("\nQueue of Movies:");
+        moviesList4.printMoviesList();
+        moviesList4.removeMovie();
+        System.out.println("\nUpdated Queue of Movies:");
+        moviesList4.printMoviesList();
     }
 
 //        printOutCollections();
