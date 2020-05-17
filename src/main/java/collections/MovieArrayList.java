@@ -31,10 +31,10 @@ public class MovieArrayList {
     public void printMoviesList() {
         Iterator<String> iter = moviesList.iterator();
         while (iter.hasNext()) {
-
             System.out.println(iter.next());
         }
     }
+
 }
 
 
