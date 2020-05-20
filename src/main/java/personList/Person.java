@@ -14,10 +14,6 @@ public class Person implements Comparable<Person> {
         return this.age.compareTo(anotherPerson.age);
     }
 
-//    public int compareToIgnoreCase(Person anotherPerson) {
-//        return this.name.compareTo(anotherPerson.name);
-//    }
-
     public String getName() {
         return name;
     }
@@ -27,8 +23,8 @@ public class Person implements Comparable<Person> {
     }
 
     @Override
-    public String toString(){
-        return name + ": "+ age;
+    public String toString() {
+        return name + ": " + age;
     }
 
 }
