@@ -1,8 +1,8 @@
 package linkedList;
 
-public class LinkedList<T> {
-    Node head = null;
-    Node tail = null;
+public class LinkedList<T> implements Iterator {
+    Node head;
+    Node tail;
 
     public void insert(T data) {
         Node node = new Node();
@@ -54,10 +54,35 @@ public class LinkedList<T> {
     public void show() {
         Node node = head;
 
-        while (node.next != null) {
+        while (node != null) {
             System.out.println(node.data);
             node = node.next;
         }
         System.out.println(node.data);
+    }
+
+    public void printOut(){
+
+    }
+
+    @Override
+    public boolean hasNext() {
+        Node n = new Node();
+        if (n.next == null) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public Object next() {
+        Node n = new Node();
+        return n.next;
+    }
+
+    @Override
+    public void remove() {
+        Node n = new Node();
+        n.next = null;
     }
 }

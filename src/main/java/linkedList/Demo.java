@@ -11,9 +11,8 @@ public class Demo {
         list.insert(10);
         list.insert(1);
         list.deleteAt(4);
-        System.out.println("List size: " + list.size(list)+"\n");
-
         list.show();
+
     }
 
 }
