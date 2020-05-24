@@ -1,6 +1,8 @@
 package linkedList;
 
-public class LinkedList<T> implements Iterator {
+import java.util.Iterator;
+
+public class LinkedList<T> implements Iterable {
     Node head;
     Node tail;
 
@@ -67,26 +69,38 @@ public class LinkedList<T> implements Iterator {
         head = prev;
     }
 
-    @Override
-    public boolean hasNext() {
-        Node n = new Node();
-        if (n.next == null) {
-            return false;
-        }
-        return true;
-    }
 
     @Override
-    public Object next() {
-        Node node = new Node();
-        return node.next;
+    public Iterator iterator() {
+        Iterator iter = new Iterator() {
+
+            private int currentIndex = 0;
+
+            @Override
+            public boolean hasNext() {
+                if (currentIndex == 0){
+                    return head.next != null;
+                }
+                Node currentNode = head;
+
+                for (int i = 0; i < currentIndex - 1; i++) {
+                    currentNode = currentNode.next;
+                }
+
+                return currentNode.next != null;
+            }
+
+            @Override
+            public Object next() {
+                Node currentNode = head;
+                for (int i = 0; i < currentIndex - 1; i++) {
+                    currentNode = currentNode.next;
+                }
+                currentIndex++;
+                return currentNode;
+            }
+
+        };
+        return iter;
     }
-
-    @Override
-    public void remove() {
-        Node node = new Node();
-        node.next = null;
-    }
-
-
 }

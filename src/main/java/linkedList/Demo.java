@@ -16,6 +16,8 @@ public class Demo {
         System.out.println("\nReverced list: ");
         list.reverse();
         list.show();
+
+        System.out.println(list.iterator().next());
     }
 
 }
