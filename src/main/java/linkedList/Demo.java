@@ -1,7 +1,5 @@
 package linkedList;
 
-import java.util.Arrays;
-
 public class Demo {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
@@ -17,7 +15,11 @@ public class Demo {
         list.reverse();
         list.show();
 
-        System.out.println(list.iterator().next());
+        System.out.println("\nIterate through linked list ");
+        while(list.hasNext()){
+            Node node = list.next();
+            System.out.println(node.data);
+        }
     }
 
 }

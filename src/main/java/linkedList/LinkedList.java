@@ -2,9 +2,10 @@ package linkedList;
 
 import java.util.Iterator;
 
-public class LinkedList<T> implements Iterable {
+public class LinkedList<T> {
     Node head;
     Node tail;
+    int currentIndex = 0;
 
     public void insert(T data) {
         Node node = new Node();
@@ -69,38 +70,26 @@ public class LinkedList<T> implements Iterable {
         head = prev;
     }
 
+    public boolean hasNext() {
+        if (currentIndex == 0) {
+            return head.next != null;
+        }
+        Node currentNode = head;
 
-    @Override
-    public Iterator iterator() {
-        Iterator iter = new Iterator() {
+        for (int i = 0; i < currentIndex - 1; i++) {
+            currentNode = currentNode.next;
+        }
 
-            private int currentIndex = 0;
+        return currentNode.next != null;
+    }
 
-            @Override
-            public boolean hasNext() {
-                if (currentIndex == 0){
-                    return head.next != null;
-                }
-                Node currentNode = head;
+    public Node next() {
+        Node currentNode = head;
 
-                for (int i = 0; i < currentIndex - 1; i++) {
-                    currentNode = currentNode.next;
-                }
-
-                return currentNode.next != null;
-            }
-
-            @Override
-            public Object next() {
-                Node currentNode = head;
-                for (int i = 0; i < currentIndex - 1; i++) {
-                    currentNode = currentNode.next;
-                }
-                currentIndex++;
-                return currentNode;
-            }
-
-        };
-        return iter;
+        for (int i = 0; i < currentIndex; i++) {
+            currentNode = currentNode.next;
+        }
+        currentIndex++;
+        return currentNode;
     }
 }
