@@ -61,10 +61,6 @@ public class LinkedList<T> implements Iterator {
         System.out.println(node.data);
     }
 
-    public void printOut(){
-
-    }
-
     @Override
     public boolean hasNext() {
         Node n = new Node();
@@ -85,4 +81,6 @@ public class LinkedList<T> implements Iterator {
         Node n = new Node();
         n.next = null;
     }
+
+
 }

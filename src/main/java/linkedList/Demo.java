@@ -12,7 +12,6 @@ public class Demo {
         list.insert(1);
         list.deleteAt(4);
         list.show();
-
     }
 
 }
