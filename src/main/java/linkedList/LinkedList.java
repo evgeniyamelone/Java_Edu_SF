@@ -26,39 +26,45 @@ public class LinkedList<T> implements Iterator {
     public void deleteAt(int index) {
         if (index == 0) {
             head = head.next;
+            head.prev = null;
         } else {
-            Node n = head;
-            Node n1 = null;
+            Node previousNode = head;
+            Node nodeToDelete;
+            Node nextNode;
             for (int i = 0; i < index - 1; i++) {
-                n = n.next;
+                previousNode = previousNode.next;
             }
-            n1 = n.next;
-            n.next = n1.next;
-            Node k = n1.next;
-            if (k != null) {
-                k.prev = n;
+            nodeToDelete = previousNode.next;
+            previousNode.next = nodeToDelete.next;
+            nextNode = nodeToDelete.next;
+            if (nextNode != null) {
+                nextNode.prev = previousNode;
             }
+            nodeToDelete.prev = null;
         }
-    }
-
-    public int size(T list) {
-        int i = 0;
-        Node n = head;
-        while (n.next != null) {
-            n = n.next;
-            i++;
-        }
-        return i;
     }
 
     public void show() {
         Node node = head;
 
-        while (node != null) {
+        while (node.next != null) {
             System.out.println(node.data);
             node = node.next;
         }
         System.out.println(node.data);
+    }
+
+    public void reverse() {
+        Node prev = null;
+        Node node = head;
+        Node next;
+        while (node != null) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        head = prev;
     }
 
     @Override
@@ -72,14 +78,14 @@ public class LinkedList<T> implements Iterator {
 
     @Override
     public Object next() {
-        Node n = new Node();
-        return n.next;
+        Node node = new Node();
+        return node.next;
     }
 
     @Override
     public void remove() {
-        Node n = new Node();
-        n.next = null;
+        Node node = new Node();
+        node.next = null;
     }
 
 
