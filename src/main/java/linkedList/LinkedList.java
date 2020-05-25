@@ -1,7 +1,5 @@
 package linkedList;
 
-import java.util.Iterator;
-
 public class LinkedList<T> {
     Node head;
     Node tail;
