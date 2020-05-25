@@ -42,11 +42,10 @@ public class ListActions {
 
     public static List<Person> uniquePersons(List<Person> personList) {
         List<Person> uniqueList = new ArrayList<>();
-        ListActions action = new ListActions();
         Iterator<Person> iter = personList.iterator();
         while (iter.hasNext()) {
             Person next = iter.next();
-            if (!action.contains(uniqueList, next)) {
+            if (!contains(uniqueList, next)) {
                 uniqueList.add(next);
             }
         }
