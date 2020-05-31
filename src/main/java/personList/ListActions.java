@@ -24,11 +24,7 @@ public class ListActions {
         } else {
             while (iter.hasNext()) {
                 Person next = iter.next();
-                if (!contains(personList2, next)) {
-                    containsResult = false;
-                } else {
-                    containsResult = true;
-                }
+                containsResult = contains(personList2, next);
             }
         }
         return containsResult;
@@ -42,9 +38,7 @@ public class ListActions {
 
     public static List<Person> uniquePersons(List<Person> personList) {
         List<Person> uniqueList = new ArrayList<>();
-        Iterator<Person> iter = personList.iterator();
-        while (iter.hasNext()) {
-            Person next = iter.next();
+        for (Person next : personList) {
             if (!contains(uniqueList, next)) {
                 uniqueList.add(next);
             }
