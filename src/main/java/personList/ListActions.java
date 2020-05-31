@@ -6,21 +6,20 @@ import java.util.List;
 
 public class ListActions {
     public static boolean contains(List<Person> personList, Person person) {
-        boolean containsResult = false;
         PersonsComparator comparePersons = new PersonsComparator();
         for (Person e : personList) {
             if (comparePersons.compare(e, person) == 0) {
-                containsResult = true;
+                return true;
             }
         }
-        return containsResult;
+        return false;
     }
 
     public static boolean equalLists(List<Person> personList1, List<Person> personList2) {
         Iterator<Person> iter = personList1.iterator();
         boolean containsResult = false;
         if (personList1.size() != personList2.size()) {
-            containsResult = false;
+           return false;
         } else {
             while (iter.hasNext()) {
                 Person next = iter.next();

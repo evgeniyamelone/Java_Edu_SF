@@ -5,7 +5,7 @@ import java.util.*;
 public class Demo {
     public static void main(String[] args) {
         List<Person> personList1 = new ArrayList<>();
-        personList1.add(new Person("John", 25));
+        personList1.add(new Person("John1", 25));
         personList1.add(new Person("Rose", 24));
         personList1.add(new Person("Stephen", 16));
         personList1.add(new Person("Stephen", 10));
