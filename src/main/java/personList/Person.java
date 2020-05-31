@@ -1,28 +1,29 @@
 package personList;
 
-public class Person implements Comparable<Person> {
+import org.jetbrains.annotations.NotNull;
+
+public class Person {
     private String name;
-    private Integer age;
+    private int age;
 
     public Person(String name, Integer age) {
         this.name = name;
         this.age = age;
     }
 
-    @Override
-    public int compareTo(Person anotherPerson) {
-        return this.age.compareTo(anotherPerson.age);
+    public int comparePersons(Person anotherPerson) {
+        if (this.age > anotherPerson.age)
+            return -1;
+        else
+            return 0;
     }
 
     public String getName() {
         return name;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
     @Override
+    @NotNull
     public String toString() {
         return name + ": " + age;
     }
