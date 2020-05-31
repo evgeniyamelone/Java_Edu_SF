@@ -45,7 +45,7 @@ public class ListActions {
         return uniqueList;
     }
 
-    public static List<Person> sort2(List<Person> personList) {
+    public static void sort2(List<Person> personList) {
         int count = personList.size() * personList.size();
         do {
             for (int i = 0; i < personList.size() - 1; i++) {
@@ -58,6 +58,5 @@ public class ListActions {
             }
             count--;
         } while (count > 0);
-        return personList;
     }
 }
