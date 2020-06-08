@@ -26,9 +26,10 @@ public class Demo {
         int result = object1.compareTo(object2);
         return result == 0;
     }
-
     public static <T extends Comparable<? super T>> T getMax(T object1, T object2) {
         boolean compareResult = true;
         return compareResult ? object1 : object2;
     }
+
+    
 }
