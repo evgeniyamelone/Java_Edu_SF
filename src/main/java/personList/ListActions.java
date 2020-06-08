@@ -1,10 +1,13 @@
 package personList;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.TreeSet;
 
-public class ListActions {
+public class ListActions implements Comparable{
     public static boolean contains(List<Person> personList, Person person) {
         PersonsComparator comparePersons = new PersonsComparator();
         for (Person e : personList) {
@@ -35,14 +38,13 @@ public class ListActions {
         }
     }
 
-    public static List<Person> uniquePersons(List<Person> personList) {
-        List<Person> uniqueList = new ArrayList<>();
-        for (Person next : personList) {
-            if (!contains(uniqueList, next)) {
-                uniqueList.add(next);
-            }
+    public static TreeSet<Person> uniquePersons(List<Person> personList) {
+        TreeSet sorted = new TreeSet<>();
+        for (Person e: personList){
+
         }
-        return uniqueList;
+
+        return new TreeSet<>(personList);
     }
 
     public static void sort2(List<Person> personList) {
@@ -58,5 +60,10 @@ public class ListActions {
             }
             count--;
         } while (count > 0);
+    }
+
+    @Override
+    public int compareTo(@NotNull Object o) {
+        return 0;
     }
 }
