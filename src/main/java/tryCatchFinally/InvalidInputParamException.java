@@ -4,6 +4,7 @@ public class InvalidInputParamException extends ArithmeticException {
     private String exceptionString;
 
     public InvalidInputParamException(String exceptionString) {
+        super(exceptionString);
         this.exceptionString = exceptionString;
     }
 

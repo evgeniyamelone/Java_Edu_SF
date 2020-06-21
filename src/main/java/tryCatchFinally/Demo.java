@@ -12,8 +12,8 @@ public class Demo {
         int denominator = scanner.nextInt();
 
         try {
-            new Arithmetic();
-            System.out.println("Result = " + Arithmetic.divide(numerator, denominator));
+            Arithmetic arithmetic = new Arithmetic();
+            System.out.println("Result = " + arithmetic.divide(numerator, denominator));
         } catch (InvalidInputParamException e) {
             System.out.println(e.getExceptionString());
         } finally {
