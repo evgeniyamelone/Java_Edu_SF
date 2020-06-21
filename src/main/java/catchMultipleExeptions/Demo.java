@@ -11,7 +11,6 @@ public class Demo {
         int denominator = scanner.nextInt();
 
         try {
-            new Arithmetic();
             System.out.println("Result = " + Arithmetic.divide(numerator, denominator));
 
         } catch (EqualNumbersException | InvalidInputParamException | ResultZeroException e) {
