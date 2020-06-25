@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WordsWithSpaces {
-    private static final Pattern pattern = Pattern.compile("[A-Za-z]\\S*\\b");
+    private static final Pattern pattern = Pattern.compile("\\w+");
 
     public static String getWords(String text) {
         Matcher matcher = pattern.matcher(text);
