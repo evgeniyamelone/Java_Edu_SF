@@ -1,11 +1,11 @@
-package wordsWithSpaces;
+package wordsWithDoubleLetters;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class WordsWithSpaces {
+public class WordsWithDoubleLetters {
     private static final Pattern pattern = Pattern.compile("\\w+");
 
     public static String getWords(String text) {
@@ -14,7 +14,6 @@ public class WordsWithSpaces {
         while (matcher.find()) {
             list.add(text.substring(matcher.start(), matcher.end()));
         }
-        return String.join(" ", list);
+        return String.join(" ", list).trim();
     }
 }
-
