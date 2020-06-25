@@ -14,7 +14,7 @@ public class WordsWithSpaces {
         while (matcher.find()) {
             list.add(text.substring(matcher.start(), matcher.end()));
         }
-        return String.join(" ", list);
+        return String.join(" ", list).trim();
     }
 }
 
