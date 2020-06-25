@@ -32,6 +32,18 @@ class WordsWithSpacesTest {
     }
 
     @Test
+    void empty() {
+        Assertions.assertThat(words.getWords(""))
+                .isEqualTo("");
+    }
+
+    @Test
+    void blank() {
+        Assertions.assertThat(words.getWords(" "))
+                .isEqualTo("");
+    }
+
+    @Test
     void task() {
         Assertions.assertThat(words.getWords(" Removing        Extra Spaces       Between Words in  the             text  "))
                 .isEqualTo("Removing Extra Spaces Between Words in the text");
