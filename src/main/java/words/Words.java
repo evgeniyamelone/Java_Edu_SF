@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Words {
-    private static Pattern pattern = Pattern.compile("\\b[A-Z]\\S+|\\b[A-Z]");
+    private static Pattern pattern = Pattern.compile("\\b[A-Z]\\S*");
 
     public static List<String> getWords(String text) {
         Matcher matcher = pattern.matcher(text);
