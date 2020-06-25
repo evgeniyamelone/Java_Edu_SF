@@ -6,14 +6,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Words {
-    public static String matches(String regex, String text) {
-        Pattern pattern = Pattern.compile(regex);
+    private static Pattern pattern = Pattern.compile("\\b[A-Z]\\S+|\\b[A-Z]");
+
+    public static List<String> getWords(String text) {
         Matcher matcher = pattern.matcher(text);
         List<String> list = new ArrayList<>();
         while (matcher.find()) {
-            list.add(text.substring(matcher.start(), matcher.end()) + " ");
+            list.add(text.substring(matcher.start(), matcher.end()));
         }
-        return String.join("", list).trim();
+        return list;
     }
 }
 
