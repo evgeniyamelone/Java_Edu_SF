@@ -1,4 +1,4 @@
-package catchMultipleExeptions;
+package catchmultipleexceptions;
 
 
 public class InvalidInputParamException extends Exception {

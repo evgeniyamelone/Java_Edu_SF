@@ -1,4 +1,4 @@
-package catchMultipleExeptions;
+package catchmultipleexceptions;
 
 import java.util.Scanner;
 
