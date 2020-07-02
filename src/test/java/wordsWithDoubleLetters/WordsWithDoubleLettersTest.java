@@ -47,4 +47,20 @@ class WordsWithDoubleLettersTest {
         Assertions.assertThat(words.getWords("password wword word Heeeeeeello"))
                 .isEqualTo("word");
     }
+
+    @Test
+    void twoWords() {
+        Assertions.assertThat(words.getWords("word1 wword wword word2"))
+                .isEqualTo("word1 word2");
+    }
+
+    @Test
+    void twoLettersNotInARow() {
+        Assertions.assertThat(words.getWords("wword wword word2 woword")).isEqualTo("word2 woword");
+    }
+
+    @Test
+    void threeWords() {
+        Assertions.assertThat(words.getWords("Helo wword wword word2 woword")).isEqualTo("Helo word2 woword");
+    }
 }

@@ -6,10 +6,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WordsWithDoubleLetters {
-    private static final String pattern = "\\w*(\\w+)\\1\\w*";
+    private static final Pattern pattern = Pattern.compile("\\b(?:(?!\\w*(\\w)\\1\\w*)\\w)+\\b");
 
     public static String getWords(String text) {
-
-        return text.replaceAll(pattern, "").trim();
+        Matcher matcher = pattern.matcher(text);
+        List<String> list = new ArrayList<>();
+        while (matcher.find()) {
+            list.add(text.substring(matcher.start(), matcher.end()));
+        }
+        return String.join(" ", list);
     }
 }
