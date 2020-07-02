@@ -1,4 +1,4 @@
-package objectsBasicsMandatoryPracticalTasks;
+package objectsBasicsMandatoryPracticalTasks.Books;
 
 class Book {
     private String title;
@@ -12,6 +12,6 @@ class Book {
     }
 
     void printBook(Book book) {
-        System.out.println("Title: \n" +  " " + title + "\nPrice: \n" + " " + price);
+        System.out.println("Title: \n" + " " + title + "\nPrice: \n" + " " + price);
     }
 }
