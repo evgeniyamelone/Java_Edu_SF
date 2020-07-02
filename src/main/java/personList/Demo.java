@@ -43,13 +43,14 @@ public class Demo {
         System.out.println("\nSorted list2 of persons: ");
         ListActions.printOut(personList2);
 
-        List<Person> sortedList = ListActions.sort2(personList3);
+        ListActions.sort2(personList3);
         System.out.println("\nSorted list3 of persons: ");
-        ListActions.printOut(sortedList);
+        System.out.println(personList3);
 
-        List<Person> uniqueList = ListActions.uniquePersons(personList1);
+        TreeSet<Person> uniqueList = ListActions.uniquePersons(personList1);
         System.out.println("\nList of unique persons: ");
-        ListActions.printOut(uniqueList);
+       // ListActions.printOut(uniqueList);
+        System.out.println(uniqueList);
 
         boolean equalResult = ListActions.equalLists(personList1, personList2);
         System.out.println("\nLists are equal: " + equalResult);
