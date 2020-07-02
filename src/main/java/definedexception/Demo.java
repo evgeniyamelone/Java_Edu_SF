@@ -1,4 +1,4 @@
-package definedException;
+package definedexception;
 
 import java.util.Scanner;
 
