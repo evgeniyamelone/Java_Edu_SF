@@ -1,4 +1,4 @@
-package tryCatchFinally;
+package trycatchfinally;
 
 public class InvalidInputParamException extends ArithmeticException {
     private String exceptionString;

@@ -1,4 +1,4 @@
-package tryCatchFinally;
+package trycatchfinally;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
