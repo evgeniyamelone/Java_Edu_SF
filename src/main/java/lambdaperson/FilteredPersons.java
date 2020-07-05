@@ -1,7 +1,6 @@
 package lambdaperson;
 
 import personlist.Person;
-
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -15,9 +14,10 @@ public class FilteredPersons {
 
         return personList.stream().filter(Person -> Person.getAge() < 30 & Person.getAge() > 20)
                 .sorted(sortingByNameLength)
+                .map((Person p) -> {
+                    p.setName(p.getName().toUpperCase());
+                    return p;
+                })
                 .collect(Collectors.toCollection(LinkedHashSet::new));
     }
 }
-
-// Comparator<Person> sortingByName = Comparator.comparing(Person::getName);
-//personList = new TreeSet<>(sortingByName);
