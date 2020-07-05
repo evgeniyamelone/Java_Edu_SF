@@ -1,7 +1,6 @@
 package personlist;
 
 import org.jetbrains.annotations.NotNull;
-import java.util.Comparator;
 
 public class Person {
     private String name;
