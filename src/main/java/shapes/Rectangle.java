@@ -10,6 +10,11 @@ public class Rectangle extends Shape {
         this.length = 1.0;
     }
 
+    @Override
+    double getArea() {
+        return 0;
+    }
+
     Rectangle(double width, double length) {
         this.width = width;
         this.length = length;
@@ -40,12 +45,24 @@ public class Rectangle extends Shape {
     }
 
     //perimeter of rectangle
+
+    @Override
     double getPerimeter() {
         return 2 * (getLength() + getWidth());
+    }
+
+    @Override
+    boolean isInside(double x, double y) {
+        if (Math.abs(x)<length && Math.abs(y)<width) {
+            return true;
+        }
+        else return false;
     }
 
     @Override
     public String toString() {
         return "A Rectangle with width = " + getWidth() + " and length = " + getLength() + ", which is a subclass of " + super.toString();
     }
+
+
 }

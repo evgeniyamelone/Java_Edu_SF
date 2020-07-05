@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
@@ -17,6 +16,8 @@ public class SearchElementInArray {
             arr[i] = randomNumber.nextInt(1000);
             System.out.println(arr[i]);
         }
+
+
 
         // a number to search in the array
         Scanner s2 = new Scanner(System.in);
