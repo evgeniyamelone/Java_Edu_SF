@@ -1,4 +1,4 @@
-package personList;
+package personlist;
 
 import org.jetbrains.annotations.NotNull;
 
