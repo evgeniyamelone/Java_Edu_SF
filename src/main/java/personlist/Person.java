@@ -11,8 +11,8 @@ public class Person {
         this.age = age;
     }
 
-    public int comparePersons(Person anotherPerson) {
-        if (this.age > anotherPerson.age)
+    public int comparePersonsByAge(Person anotherPerson) {
+        if (this.age < anotherPerson.age)
             return -1;
         else
             return 0;
@@ -22,12 +22,15 @@ public class Person {
         return name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     @Override
     @NotNull
     public String toString() {
         return name + ": " + age;
     }
-
 }
 
 
