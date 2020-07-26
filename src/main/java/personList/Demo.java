@@ -1,4 +1,4 @@
-package personlist;
+package personList;
 
 import java.util.*;
 

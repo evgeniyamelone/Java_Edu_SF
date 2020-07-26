@@ -1,7 +1,6 @@
-package personlist;
+package personList;
 
 import org.jetbrains.annotations.NotNull;
-import java.util.Comparator;
 
 public class Person {
     private String name;
@@ -10,6 +9,10 @@ public class Person {
     public Person(String name, Integer age) {
         this.name = name;
         this.age = age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int comparePersonsByAge(Person anotherPerson) {
