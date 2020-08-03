@@ -23,6 +23,17 @@ public class Author {
     public String getAuthorFullName() {
         return this.getFirstName() + " " + this.getLastName();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Author author = (Author) o;
+        return firstName.equals(author.firstName) &&
+                lastName.equals(author.lastName);
+    }
 }
-
-

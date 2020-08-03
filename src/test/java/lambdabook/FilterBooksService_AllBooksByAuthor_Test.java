@@ -50,8 +50,7 @@ public class FilterBooksService_AllBooksByAuthor_Test {
     void filter_emptyList() {
         Author author = new Author("Edgar", "Po");
         List<Book> given = Collections.EMPTY_LIST;
-        String expected = "";
         String actual = filterBooksService.getBooks(given, author);
-        Assertions.assertThat(actual).isEqualTo(expected);
+        Assertions.assertThat(actual).isEmpty();
     }
 }

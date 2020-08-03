@@ -9,10 +9,10 @@ public class Book {
         this.title = title;
         this.price = price;
         this.author = author;
-//        author.printAuthor(author);
     }
 
     void printBook(Book book) {
+
         System.out.println("Title: \n" + " " + title + "\nPrice: \n" + " " + price);
     }
 
@@ -28,7 +28,8 @@ public class Book {
         return author;
     }
 
-    public String getBookDetails() {
+    @Override
+    public String toString() {
         String title = getTitle();
         String authorFullName = getAuthor().getAuthorFullName();
         double price = getPrice();
@@ -45,5 +46,19 @@ public class Book {
 
     public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Book book = (Book) o;
+        return title.equals(book.title) &&
+                price == book.price &&
+                author.equals(book.author);
     }
 }
